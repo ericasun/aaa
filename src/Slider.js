@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 
-let flag = 0;
+let index1 = 0;
+let index2 = 0;
+let flag = false;
 
 export default class Slider extends React.Component{
     constructor(props) {
@@ -27,26 +29,40 @@ export default class Slider extends React.Component{
         let length = $div.children.length
 
 
+        if(index1 < 3 && flag === false){
+            for( let i =0 ; i< length; i++){
+                $div.children[i].style.left = 100 * (i-1-index1) + "px"
+                $div.children[i].style.transitionDuration = 1+'s';// 再增加回来这个动画
 
-        for( let i =0 ; i< length; i++){
-            $div.children[i].style.left = 100 * (i-1) + (-100) * flag + "px"
-            $div.children[i].style.transitionDuration = 1+'s';// 再增加回来这个动画
-
+            }
+            index1++;
+            if(index1 === 3){
+                flag =  true;
+            }
         }
 
-        flag ++ 
+        console.log(flag)
 
-        // if( $div.children[0].style.left === (-200 + "px")){
-        //     $div.children[0].style.left = 100 + "px";
-        // }
-        //
-        // if( $div.children[1].style.left === (-200 + "px")){
-        //     $div.children[1].style.left = 100 + "px";
-        // }
-        //
-        // if( $div.children[2].style.left === (-200 + "px")){
-        //     $div.children[2].style.left = 100 + "px";
-        // }
+        if(flag === true){
+            console.log(1)
+            for( let i =0 ; i< length; i++){
+                $div.children[i].style.left = 100 * i + (-100) * index2 +"px"
+                $div.children[i].style.transitionDuration = 1+'s';// 再增加回来这个动画
+            }
+            index2++
+        }
+
+        if( $div.children[0].style.left === (-200 + "px")){
+            $div.children[0].style.left = 100 + "px";
+        }
+
+        if( $div.children[1].style.left === (-200 + "px")){
+            $div.children[1].style.left = 100 + "px";
+        }
+
+        if( $div.children[2].style.left === (-200 + "px")){
+            $div.children[2].style.left = 100 + "px";
+        }
 
 
         // $div.children[0].style.left = -100 + "px"
