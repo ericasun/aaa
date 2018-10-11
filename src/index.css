@@ -1,23 +1,19 @@
 *{margin: 0;padding: 0}
-ul,li{list-style: none}
 
-.slider-container{ width:400px; height:300px; border:5px solid red; margin:0 auto; position: relative; overflow: hidden;}
+.slider{ width:100px; height:100px; border:5px solid black; margin:150px auto; position:relative; overflow:visible;}
 
-ul{ position: absolute;height: 300px;left: 0;top: 0;}
+.slider > .sliderList{ width:300px; height:100px;  display:flex; align-items:flex-start;  }
+.slider > .sliderList .one,
+.slider > .sliderList .two,
+.slider > .sliderList .three{ width:100px; height:100px; position:absolute; }
 
-li{ width: 400px;height: 300px;float: left;}
+.slider > .sliderList .one{ background:red; left:0; }
+.slider > .sliderList .two{ background:yellowgreen;  left:105px;}
+.slider > .sliderList .three{ background:mediumseagreen;  left:205px;}
 
-img{width: 100%;height: 100%;}
 
-.slider-arrows{ position: absolute; width: 100%; height:40px; top:50%; transform: translateY(-50%); left:0;}
+span{ position:absolute; top:40px; padding:5px; background:deepskyblue; color:black;}
 
-span{ width: 30px;height: 40px;line-height: 40px;display: block; background: #ffffff;text-align: center;
-    -webkit-user-select: none; cursor: pointer;}
-span:nth-child(1){ float: left; }
-span:nth-child(2){ float: right; }
+span.right { right:0;}
 
-.slider-dots{ position: absolute;width: 100%;left: 0;bottom: 20px;text-align: center;}
-span{ background: #ffffff;display: inline-block;width: 20px;height: 20px; border-radius: 50%;
-    margin: 3px;cursor: pointer;}
-span.active{ background: rgba(233,222,100,0.8); }
 

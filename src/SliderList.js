@@ -3,7 +3,7 @@ export default class MessageBox extends React.Component {
     render(){
         let style={
             width:(this.props.items.length+1)*400+'px', // 设置ul默认宽度
-            left:this.props.index*400*-1 + 'px', // 根据当前inedex  移动left值
+            left:this.props.index*400*-1 + 'px', // 根据当前index  移动left值
             transition:`left ${this.props.speed}s linear`
         }
         return (
